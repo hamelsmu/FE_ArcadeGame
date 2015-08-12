@@ -1,6 +1,9 @@
-frontend-nanodegree-arcade-game
-===============================
+Instructions on how to play game.
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+To get started, simply open index.html in your broswer.
 
-for self-checking their submission.
+Objective:  get your player across the tiles to the river, without running into the cockroaches.  If you collide with a cockroach, then you will start all over again.
+
+Instructions:  to move your player, use the directional key pad (up,down,left,right).  Avoid the roaches, or you will
+start over again.
+
