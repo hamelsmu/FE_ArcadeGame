@@ -9,7 +9,20 @@ var Enemy = function(x,y,speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
-}
+};
+
+
+var detectCollisions = function(){
+
+    allEnemies.forEach(function(enemy) {
+        if(enemy.x < player.x + 50 && enemy.x + 70 > player.x &&
+        enemy.y < player.y + 50 && enemy.y + 70 > player.y) {
+
+            console.log('collision!');
+            player.startOver();
+        }
+    });
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -29,17 +42,9 @@ Enemy.prototype.update = function(dt) {
     }
 
     //If there is a collision, then reset the player position
-    allEnemies.forEach(function(enemy) {
-         if(enemy.x < player.x + 50 &&
-            enemy.x + 70 > player.x &&
-            enemy.y < player.y + 50 &&
-            enemy.y + 70 > player.y) {
-                console.log('collision!');
-                player.startOver();
-            }
-        });
+    detectCollisions();
 
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -60,17 +65,17 @@ var Player = function(x,y){
 
     //set the picture
     this.sprite = 'images/char-boy.png';
-}
+};
 
 Player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Player.prototype.update = function(){
     if(this.y <= 40){
         this.startOver();
     }
-}
+};
 
 Player.prototype.handleInput = function(direction){
 
@@ -78,12 +83,12 @@ Player.prototype.handleInput = function(direction){
     if(direction === 'up' && this.y > 0){this.y -= 82.5}
     if(direction === 'right' && this.x < 400){this.x += 100;}
     if(direction === 'down' && this.y < 400){this.y +=82.5;}
-}
+};
 
 Player.prototype.startOver = function(){
     this.x = this.startx;
     this.y = this.starty;
-}
+};
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
