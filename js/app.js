@@ -49,7 +49,7 @@ Enemy.prototype.update = function(dt) {
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -79,8 +79,8 @@ Player.prototype.update = function(){
 
 Player.prototype.handleInput = function(direction){
 
-    if(direction === 'left' && this.x > 25){this.x -=100}
-    if(direction === 'up' && this.y > 0){this.y -= 82.5}
+    if(direction === 'left' && this.x > 25){this.x -=100;}
+    if(direction === 'up' && this.y > 0){this.y -= 82.5;}
     if(direction === 'right' && this.x < 400){this.x += 100;}
     if(direction === 'down' && this.y < 400){this.y +=82.5;}
 };
