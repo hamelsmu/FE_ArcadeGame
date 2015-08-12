@@ -1,6 +1,4 @@
-Instructions on how to play game.
-
-To get started, simply open index.html in your broswer.
+Instructions
 
 Objective:  get your player across the tiles to the river, without running into the cockroaches.  If you collide with a cockroach, then you will start all over again.
 
